@@ -21,10 +21,10 @@ public class HousingLoan {
         double x= ((unitPrice * area * mortgageRatio) * lendingRate * Math.pow(1 + lendingRate, MortgageYears  * 12)) / (Math.pow(1 + lendingRate, MortgageYears * 12) - 1) * MortgageYears * 12 -(unitPrice * area);
         String s = "HousingLoan{ 房款总额:" + unitPrice * area +
                 "\r贷款总额:" + unitPrice * area * mortgageRatio +
-                "\n贷款月数:" + MortgageYears * 12 +
-                "\n等额本息每月还款金额" + ((unitPrice * area * mortgageRatio) * lendingRate * Math.pow(1 + lendingRate, MortgageYears * 12))/(Math.pow(1 + lendingRate, MortgageYears * 12) - 1) +
-                "\n还款总额:" + ((unitPrice * area * mortgageRatio) * lendingRate * Math.pow(1 + lendingRate, MortgageYears * 12)) / (Math.pow(1 + lendingRate, MortgageYears * 12) - 1) * MortgageYears* 12 +
-                "\n支付利息款:" +x
+                "\r贷款月数:" + MortgageYears * 12 +
+                "\r等额本息每月还款金额" + ((unitPrice * area * mortgageRatio) * lendingRate * Math.pow(1 + lendingRate, MortgageYears * 12))/(Math.pow(1 + lendingRate, MortgageYears * 12) - 1) +
+                "\r还款总额:" + ((unitPrice * area * mortgageRatio) * lendingRate * Math.pow(1 + lendingRate, MortgageYears * 12)) / (Math.pow(1 + lendingRate, MortgageYears * 12) - 1) * MortgageYears* 12 +
+                "\r支付利息款:" +x
                 + "}";
         return s;
     }

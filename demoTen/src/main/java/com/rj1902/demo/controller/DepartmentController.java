@@ -4,7 +4,6 @@ import com.rj1902.demo.entity.Department;
 import com.rj1902.demo.entity.Inquiry;
 import com.rj1902.demo.service.DepartmentService;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +30,7 @@ public class DepartmentController {
     public List<Department> queryDepartment(HttpSession session){
         return service.queryDepartment(session);
     }
+
     @GetMapping("/inquiry")
     public HashMap<String, Object> inquiryDepartment (Inquiry inquiry, HttpSession session){
         return service.inquiryDepartment(inquiry, session);
