@@ -63,9 +63,9 @@ public class StudentController {
         return studentRepository.findBySexAndDepartment(sex, department);
     }
     //根据学生编号，统计查询该生的平均分
-//    @PostMapping("/getStudentAchievement")
-//    public Double getStudentAchievement(String code){
-//        return studentRepository.getAchievement(id);
-//    }
+    @PostMapping("/getStudentAchievement")
+    public Double getStudentAchievement(Integer id){
+        return studentRepository.getAchievement(id);
+    }
 
 }

@@ -66,10 +66,10 @@ public class CourseController {
 //    根据课程名称查询选修该课程的选课信息的接口，
 //     输出学生编号，姓名，性别，系部，选课时间，成绩，
 //     分页查询并按学生编号升序排序。
-//    @GetMapping("/getCourseSelection")
-//    public List<CourseSelection> getCourseSelect(String name){
-//        Sort sort=Sort.by(Sort.Direction.ASC,"code");
-//        Pageable pageable=PageRequest.of(0, 5,sort);
-//        return courseRepository.getAchievement(name, pageable).getContent();
-//    }
+    @GetMapping("/getCourseSelection")
+    public List<CourseSelection> getCourseSelect(String name){
+        Sort sort=Sort.by(Sort.Direction.ASC,"code");
+        Pageable pageable=PageRequest.of(0, 5,sort);
+        return courseRepository.getAchievement(name, pageable).getContent();
+    }
 }
