@@ -23,4 +23,8 @@ public class Leader implements Serializable {
     private String code;
 
     private String name;
+
+    @JsonIgnoreProperties(value = "leader")
+    @OneToOne(mappedBy = "leader",cascade = CascadeType.ALL)
+    private Department department;
 }

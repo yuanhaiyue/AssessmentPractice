@@ -29,4 +29,22 @@ public class DepartmentController {
         Department save=departmentRepository.save(department);
         return save!=null?"sucess":"fail";
     }
+    //更新操作 需要带上Id 否则会是进行新增操作
+    @PostMapping("/update")
+    public String update(Department department){
+        Department save=departmentRepository.save(department);
+        return save!=null?"sucess":"fail";
+    }
+
+    @PostMapping("/deleteById")
+    public String deleteById(Integer id){
+        try {
+            departmentRepository.deleteById(id);
+            return "sucess";
+        }
+        catch ( Exception e){
+            e.printStackTrace();
+        }
+        return "fail";
+    }
 }

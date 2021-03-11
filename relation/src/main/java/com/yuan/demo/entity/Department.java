@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Transactional
 @Entity
@@ -25,6 +26,16 @@ public class Department {
 
     private String location;
 
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+
+    @JsonIgnoreProperties(value = "department")
+    @OneToOne(cascade = CascadeType.ALL)
     private Leader leader;
+
+
+    @JsonIgnoreProperties(value = "department")
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "department")
+    Set<Student> students;
+
+
+
 }
