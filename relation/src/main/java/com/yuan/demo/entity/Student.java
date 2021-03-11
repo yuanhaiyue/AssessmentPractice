@@ -1,11 +1,15 @@
 package com.yuan.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
-@Data
+@Setter
+@Getter
 @Entity
 @Table(name = "cascade_student")
 public class Student {
@@ -32,5 +36,11 @@ public class Student {
     @ManyToOne (cascade = CascadeType.ALL)
     Department department;
 
+    @JsonIgnoreProperties(value = "students")
+    @ManyToMany(mappedBy = "students",fetch = FetchType.EAGER)
+    Set<Interest> interests;
 
+    @JsonIgnoreProperties(value = "student")
+    @OneToMany(mappedBy = "student",fetch = FetchType.EAGER)
+    private List<StudentCourse> studentCourses;
 }
